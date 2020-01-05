@@ -1,9 +1,9 @@
 package com.swan.ticket;
 
-public class NoneDiscountPolicy extends DiscountPolicy {
+public class NoneDiscountPolicy implements DiscountPolicy {
 
     @Override
-    protected Money getDiscountAmount(Screening screening) {
+    public Money calculateDiscountAmount(Screening screening) {
         return Money.ZERO;
     }
 }
