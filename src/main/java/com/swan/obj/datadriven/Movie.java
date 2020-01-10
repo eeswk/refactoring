@@ -11,7 +11,7 @@ public class Movie {
 
     private MovieType movieType;
     private Money discountAmount;
-    private Money discountPercent;
+    private double discountPercent;
 
 
     public Money getFee() {
@@ -46,11 +46,11 @@ public class Movie {
         this.discountAmount = discountAmount;
     }
 
-    public Money getDiscountPercent() {
+    public double getDiscountPercent() {
         return discountPercent;
     }
 
-    public void setDiscountPercent(Money discountPercent) {
+    public void setDiscountPercent(double discountPercent) {
         this.discountPercent = discountPercent;
     }
 }
