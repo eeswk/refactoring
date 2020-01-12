@@ -35,12 +35,12 @@ public class Screening {
     public Money calculateFee(int audienceCount) {
         switch (movie.getMovieType()) {
             case AMOUNT_DISCOUNT:
-                if (movie.isDsicuntable(whenScreend, sequence)) {
+                if (movie.isDiscountable(whenScreend, sequence)) {
                     return movie.calculateAmountDiscountedFee().times(audienceCount);
                 }
                 break;
             case PERCENT_DISCOUNT:
-                if (movie.isDsicuntable(whenScreend, sequence)) {
+                if (movie.isDiscountable(whenScreend, sequence)) {
                     return movie.calculatePercentDiscountFee().times(audienceCount);
                 }
                 break;

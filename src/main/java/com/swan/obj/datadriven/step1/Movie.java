@@ -78,7 +78,7 @@ public class Movie {
         return fee;
     }
 
-    public boolean isDsicuntable(LocalDateTime whenScreend, int sequecne) {
+    public boolean isDiscountable(LocalDateTime whenScreend, int sequecne) {
         for (DiscountCondtion condtion : discountCondtions) {
             if (condtion.getType() == DiscountConditionType.PERIOD) {
                 if (condtion.isDiscountable(whenScreend.getDayOfWeek(), whenScreend.toLocalTime())) {
