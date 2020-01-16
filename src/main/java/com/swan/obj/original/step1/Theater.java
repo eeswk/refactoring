@@ -8,7 +8,7 @@ public class Theater {
     }
 
     public void enter(Audience audience) {
-        ticketSeller.setTicket(audience);
+        ticketSeller.sellTo(audience);
     }
 
     public static void main(String[] args) {
