@@ -23,4 +23,29 @@ public class Movie {
     private boolean isDiscountable(Screening screening) {
         return discountConditions.stream().anyMatch(condtion -> condtion.isSatisfiedBy(screening));
     }
+
+    private Money calculateDiscountAmount() {
+        switch (movieType) {
+            case AMOUNT_DISCOUNT:
+                return calculateAmountDiscountAmount();
+            case PERCENT_DISCOUNT:
+                return calculatePercentDiscountAmount();
+            case NONE_DISCOUNT:
+                return calculateNoneDiscountAmount();
+        }
+        throw new IllegalArgumentException();
+    }
+
+    private Money calculateAmountDiscountAmount() {
+        return discountAmount;
+    }
+
+    private Money calculatePercentDiscountAmount() {
+        return fee.minus(discountPercent);
+    }
+
+    private Money calculateNoneDiscountAmount() {
+        return Money.ZERO;
+    }
+
 }
