@@ -1,6 +1,8 @@
 package com.swan.obj.practice;
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Screening {
     private Movie movie;
@@ -22,4 +24,15 @@ public class Screening {
     public int getSequence() {
         return sequence;
     }
+
+
+    // Screening이 다른 책임을 갖게 된다. 그리고 PeriodCondition의 속성이 변경시 Screening에도 영향이 발생한다
+    // 따라서 좋지 않다.
+    /*
+    public boolean isDiscountable(DayOfWeek dayOfWeek, LocalTime startTime, LocalTime endTime) {
+        return whenScreened.getDayOfWeek().equals(dayOfWeek) &&
+                startTime.compareTo(whenScreened.toLocalTime()) <= 0 &&
+                endTime.compareTo(whenScreened.toLocalTime()) >= 0;
+    }
+    */
 }
