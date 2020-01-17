@@ -1,8 +1,8 @@
 package com.swan.obj.practice;
 
-import java.time.DayOfWeek;
+
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 public class Screening {
     private Movie movie;
@@ -10,7 +10,7 @@ public class Screening {
     private LocalDateTime whenScreened;
 
     public Reservation reserve(Customer customer, int audienceCount) {
-        return Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
     }
 
     public Money calculateFee(int audienceCount) {
