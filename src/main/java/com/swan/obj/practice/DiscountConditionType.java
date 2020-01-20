@@ -1,6 +1,6 @@
 package com.swan.obj.practice;
 
-public enum DiscountCondtionType {
+public enum DiscountConditionType {
     PERIOD,
     SEQUENCE
 }

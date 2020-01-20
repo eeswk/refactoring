@@ -1,5 +1,8 @@
 package com.swan.obj.refactoring;
 
+/**
+1장 설계개선
+ */
 public class Theater {
     private TicketSeller ticketSeller;
 

@@ -2,6 +2,9 @@ package com.swan.ticket;
 
 import java.time.LocalDateTime;
 
+/**
+ * 2장 영화 예매 시스템
+ */
 public class Screening {
     private Movie movie;
     private int sequence;

@@ -1,5 +1,8 @@
 package com.swan.obj.original;
 
+/**
+ * 1장
+ */
 public class Theater {
     private TicketSeller ticketSeller;
 

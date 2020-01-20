@@ -1,5 +1,8 @@
 package com.swan.obj.original;
 
+/**
+ * 1장
+ */
 public class Bag {
     private Long amount;
     private Invitation invitation;

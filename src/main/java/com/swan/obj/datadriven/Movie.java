@@ -3,6 +3,9 @@ package com.swan.obj.datadriven;
 import java.time.Duration;
 import java.util.List;
 
+/**
+ * 4장 데이터 중심 영화 예매 시스템
+ */
 public class Movie {
     private String title;
     private Duration runningTime;

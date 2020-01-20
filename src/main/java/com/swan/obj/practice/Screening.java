@@ -3,7 +3,9 @@ package com.swan.obj.practice;
 
 import java.time.LocalDateTime;
 
-
+/**
+ * 5장 책임 주도 설계
+ */
 public class Screening {
     private Movie movie;
     private int sequence;
@@ -23,6 +25,10 @@ public class Screening {
 
     public int getSequence() {
         return sequence;
+    }
+
+    public Movie getMovie() {
+        return movie;
     }
 
 
