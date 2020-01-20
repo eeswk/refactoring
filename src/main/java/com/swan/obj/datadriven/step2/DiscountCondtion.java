@@ -73,4 +73,23 @@ public class DiscountCondtion {
         return this.sequence == sequence;
     }
 
+    // 이동
+    public boolean isDiscountable(Screening screening) {
+        if (type == DiscountConditionType.PERIOD) {
+            return isSatisfiedByPeriod(screening);
+        }
+        return isStatisFiedBySequence(screening);
+    }
+
+    private boolean isSatisfiedByPeriod(Screening screening) {
+        return screening.getWhenScreend().getDayOfWeek().equals(dayOfWeek) &&
+                startTime.compareTo(screening.getWhenScreend().toLocalTime()) <= 0 &&
+                endTime.compareTo(screening.getWhenScreend().toLocalTime()) >= 0;
+
+    }
+
+    private boolean isStatisFiedBySequence(Screening screening) {
+        return screening.getSequence() == sequence;
+    }
+
 }
