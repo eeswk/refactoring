@@ -8,7 +8,8 @@ public class RegularPhone extends Phone {
     private Duration seconds;
 
 
-    public RegularPhone(Money amount, Duration seconds) {
+    public RegularPhone(Money amount, Duration seconds, double taxRate) {
+        super(taxRate);
         this.amount = amount;
         this.seconds = seconds;
     }
@@ -27,7 +28,7 @@ public class RegularPhone extends Phone {
     }
 
     public static void main(String[] args) {
-        RegularPhone regularPhone = new RegularPhone(Money.wons(5), Duration.ofSeconds(10));
+        RegularPhone regularPhone = new RegularPhone(Money.wons(5), Duration.ofSeconds(10), 0.1d);
         regularPhone.call(new Call(LocalDateTime.of(2020, 02, 03, 12, 10, 0),
                 LocalDateTime.of(2020, 02, 03, 12, 11, 0 )));
         regularPhone.call(new Call(LocalDateTime.of(2020, 02, 04, 12, 10, 0),

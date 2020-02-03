@@ -11,7 +11,8 @@ public class NightlyDiscountPhone extends Phone {
     private Duration seconds;
 
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
+        super(taxRate);
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
@@ -39,7 +40,7 @@ public class NightlyDiscountPhone extends Phone {
     }
 
     public static void main(String[] args) {
-        NightlyDiscountPhone phone = new NightlyDiscountPhone(Money.wons(2), Money.wons(5), Duration.ofSeconds(10));
+        NightlyDiscountPhone phone = new NightlyDiscountPhone(Money.wons(2), Money.wons(5), Duration.ofSeconds(10), 0.1d);
         phone.call(new Call(LocalDateTime.of(2020, 02, 03, 12, 10, 0),
                 LocalDateTime.of(2020, 02, 03, 12, 11, 0 )));
         phone.call(new Call(LocalDateTime.of(2020, 02, 04, 22, 10, 0),
