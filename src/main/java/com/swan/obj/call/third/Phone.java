@@ -15,10 +15,13 @@ public abstract class Phone {
         for (Call call : calls) {
             result = result.plus(calculateCallFee(call));
         }
-        return result;
+        //return result;
+        return afterCalculated(result);
     }
 
-    abstract protected Money calculateCallFee(Call call);
+    protected abstract  Money calculateCallFee(Call call);
+
+    protected abstract Money afterCalculated(Money fee);
 
 
     public void call(Call call) {
