@@ -39,5 +39,23 @@ public class Phone {
                 LocalDateTime.of(2020, 02, 04, 12, 11, 0 )));
         Money money1 = phone1.calculateFee();
         System.out.println(money1.getAmount());
+
+        Phone phone2 = new Phone(new TaxablePolicy(new RegularPolicy(Money.wons(10), Duration.ofSeconds(10)), 0.1d));
+        phone2.call(new Call(LocalDateTime.of(2020, 02, 04, 12, 10, 0),
+                LocalDateTime.of(2020, 02, 04, 12, 11, 0 )));
+        Money money2 = phone2.calculateFee();
+        System.out.println(money2.getAmount());
+
+        Phone phone3 = new Phone(new RateDiscountablePolicy(new RegularPolicy(Money.wons(10), Duration.ofSeconds(10)), Money.wons(10)));
+        phone3.call(new Call(LocalDateTime.of(2020, 02, 04, 12, 10, 0),
+                LocalDateTime.of(2020, 02, 04, 12, 11, 0 )));
+        Money money3 = phone3.calculateFee();
+        System.out.println(money3.getAmount());
+
+        Phone phone4 = new Phone(new RateDiscountablePolicy( new TaxablePolicy(new RegularPolicy(Money.wons(10), Duration.ofSeconds(10)),  0.1d), Money.wons(10)));
+        phone4.call(new Call(LocalDateTime.of(2020, 02, 04, 12, 10, 0),
+                LocalDateTime.of(2020, 02, 04, 12, 11, 0 )));
+        Money money4 = phone4.calculateFee();
+        System.out.println(money4.getAmount());
     }
 }
