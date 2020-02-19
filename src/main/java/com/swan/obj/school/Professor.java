@@ -34,5 +34,17 @@ public class Professor {
                         Arrays.asList(81, 95, 75, 50, 45)));
 
         System.out.println(professor.compileStatistics());
+
+
+        FormattedGradeLecture lecture =  new FormattedGradeLecture("알고리즘",
+                        70,
+                        Arrays.asList(new Grade("A", 100, 95),
+                                new Grade("B", 94, 80),
+                                new Grade("C", 79, 70),
+                                new Grade("D", 69, 50),
+                                new Grade("F", 49, 0)),
+                        Arrays.asList(81, 95, 75, 50, 45));
+
+        System.out.println(lecture.formatAverage());
     }
 }

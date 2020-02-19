@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.reducing;
 
 public class GradeLecture extends Lecture {
     private List<Grade> grades;
@@ -68,6 +69,8 @@ public class GradeLecture extends Lecture {
 
         System.out.println(lecture.evaluate());
         System.out.println(((GradeLecture) lecture).avergage("A"));
+
+        System.out.println(lecture.stats());
     }
 
 }
